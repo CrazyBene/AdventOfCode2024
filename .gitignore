@@ -1,0 +1,4 @@
+.gradle
+.idea
+build
+src/**/Day[0-2][0-9].txt
