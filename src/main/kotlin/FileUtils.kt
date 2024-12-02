@@ -1,4 +1,4 @@
 fun readInputFromResources(fileName: String): List<String>? {
     val fileUrl = object {}.javaClass.getResource(fileName)
-    return fileUrl?.readText()?.split("\n")
+    return fileUrl?.readText()?.split(System.lineSeparator())
 }

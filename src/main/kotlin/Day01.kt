@@ -31,7 +31,6 @@ fun splitIntoLists(input: List<String>): Pair<List<Int>, List<Int>> {
     return input.map { line ->
         line
             .split("\\s+".toRegex())
-            .take(2)
             .map { it.toInt() }
             .zipWithNext()
             .first()
