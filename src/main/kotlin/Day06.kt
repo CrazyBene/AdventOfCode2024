@@ -26,10 +26,10 @@ object Day06 : BasicDay() {
         val placesVisited = walkThroughLab(startPosition, north, obstructions, width, height).first
         val possibleObstructions = placesVisited.toMutableSet().apply { remove(startPosition) }.toSet()
 
-        possibleObstructions.filter { possibleObstruction ->
+        possibleObstructions.parallelStream().filter { possibleObstruction ->
             val obstructionsToTest = obstructions.toMutableSet().apply { add(possibleObstruction) }.toSet()
             walkThroughLab(startPosition, north, obstructionsToTest, width, height).second
-        }.count()
+        }.count().toInt()
     }
 
     private fun parseInput(input: List<String>): Pair<Set<Position>, Position> {
