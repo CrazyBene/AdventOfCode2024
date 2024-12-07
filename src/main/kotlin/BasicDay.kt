@@ -18,11 +18,11 @@ abstract class BasicDay(separateTestFiles: Boolean = false) {
     private val testInputPart2 = readInputFromResources(testInputFileNamePart2)
     private val realInput = readInputFromResources(realInputFileName)
 
-    open val expectedTestValuePart1: Any? = null
-    open val expectedTestValuePart2: Any? = null
+    protected open val expectedTestValuePart1: Any? = null
+    protected open val expectedTestValuePart2: Any? = null
 
-    open val solvePart1: ((input: List<String>) -> Any)? = null
-    open val solvePart2: ((input: List<String>) -> Any)? = null
+    protected open val solvePart1: ((input: List<String>) -> Any)? = null
+    protected open val solvePart2: ((input: List<String>) -> Any)? = null
 
     fun run(runMode: RunMode = RunMode.BOTH) {
         println("Advent of Code 2024 - Day $day")
@@ -75,7 +75,7 @@ abstract class BasicDay(separateTestFiles: Boolean = false) {
             return true
         }
 
-        println("Running part $partNumber ...")
+        println("Running part $partNumber on test data ...")
         val (testSolution, testDuration) = measureTimedValue { solveFunction(testInput) }
         if (testSolution == expectedValueTestPart) {
             println("✔ Passed part $partNumber test - took $testDuration", ConsoleColor.GREEN)
@@ -96,7 +96,7 @@ abstract class BasicDay(separateTestFiles: Boolean = false) {
             return
         }
 
-        println("Running part $partNumber ...")
+        println("Running part $partNumber on real data ...")
         val (solution, duration) = measureTimedValue { solveFunction(realInput) }
         println("> Solution for part $partNumber: $solution - took $duration", ConsoleColor.PURPLE)
     }
