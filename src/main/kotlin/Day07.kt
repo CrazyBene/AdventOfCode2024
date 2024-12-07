@@ -1,3 +1,4 @@
+import kotlin.math.log10
 import kotlin.math.pow
 
 fun main() = Day07.run(RunMode.BOTH)
@@ -27,7 +28,7 @@ object Day07 : BasicDay() {
             listOf(
                 { acc, number -> acc + number },
                 { acc, number -> acc * number },
-                { acc, number -> "$acc$number".toLong() }
+                { acc, number -> concatNumbers(acc, number) }
             )
         ).sumOf { it.wantedResult }
     }
@@ -48,18 +49,34 @@ object Day07 : BasicDay() {
         val numberOfOperators = operatorFunctions.size
 
         return equations.parallelStream().filter { equation ->
-            for (operatorIndex in 0..<numberOfOperators.toDouble().pow(equation.numbers.size - 1).toLong()) {
-                val result =
-                    equation.numbers.drop(1).foldIndexed(equation.numbers.first()) { numberIndex, acc, number ->
-                        val functionIndex = operatorIndex.toString(numberOfOperators)
-                            .padStart(equation.numbers.size - 1, '0')[numberIndex].toString().toInt()
-                        operatorFunctions[functionIndex](acc, number)
-                    }
+            for (operatorCombination in 0..<numberOfOperators.toDouble().pow(equation.numbers.size - 1).toInt()) {
+                run loop@{
+                    val result =
+                        equation.numbers.drop(1).foldIndexed(equation.numbers.first()) { numberIndex, acc, number ->
+                            if (acc > equation.wantedResult) return@loop
 
-                if (result == equation.wantedResult) return@filter true
+                            val operatorIndex = getOperatorIndex(operatorCombination, numberIndex, numberOfOperators)
+                            operatorFunctions[operatorIndex](acc, number)
+                        }
+
+                    if (result == equation.wantedResult) return@filter true
+                }
             }
             false
         }.toList()
+    }
+
+    private fun concatNumbers(number1: Long, number2: Long): Long {
+        val digits = log10(number2.toDouble()).toInt() + 1
+        return (10.0.pow(digits)).toInt() * number1 + number2
+    }
+
+    private fun getOperatorIndex(operatorCombination: Int, numberIndex: Int, numberOfOperators: Int): Int {
+        var operatorIndex = operatorCombination
+        repeat(numberIndex) {
+            operatorIndex /= numberOfOperators
+        }
+        return operatorIndex % numberOfOperators
     }
 
 }
