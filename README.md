@@ -1,7 +1,7 @@
 # Advent Of Code 2024
 
-![Days completed](https://img.shields.io/badge/Days%20Completed-10-green)
-![Stars obtained](https://img.shields.io/badge/Stars%20Obtained%20⭐-20-yellow)
+![Days completed](https://img.shields.io/badge/Days%20Completed-11-green)
+![Stars obtained](https://img.shields.io/badge/Stars%20Obtained%20⭐-22-yellow)
 ![Help Needed](https://img.shields.io/badge/Help%20Needed%20➕-0-purple)
 ![Not Solved](https://img.shields.io/badge/Not%20Solved%20❌-0-red)
 
@@ -21,6 +21,7 @@ These are my solution to the Advent of Code[^aoc-footnote] puzzles of 2024.
 | 08  | [Resonant Collinearity][day08] |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day08.kt) |
 | 09  |    [Disk Fragmenter][day09]    |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day09.kt) |
 | 10  |        [Hoof It][day10]        |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day10.kt) |
+| 11  |   [Plutonian Pebbles][day10]   |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day11.kt) |
 
 [^aoc-footnote]:
 [Advent of Code][aoc] – An annual event of Christmas-oriented programming challenges started December 2015.
@@ -49,3 +50,5 @@ You can solve the puzzle and provide an answer using the language of your choice
 [day09]: https://adventofcode.com/2024/day/9
 
 [day10]: https://adventofcode.com/2024/day/10
+
+[day11]: https://adventofcode.com/2024/day/11

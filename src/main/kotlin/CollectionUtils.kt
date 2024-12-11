@@ -1,10 +1,10 @@
 /**
  * Generates all combinations of the elements of tzhe given list for the requested size.
- * Note: combinations do not include all their permutations!
+ * Note: Combinations do not include all their permutations!
  * Note2: Stolen from the official koltin aoc stream day 7, from Olaf Gottschalk (@coder_ogo)
- * @receiver the list to take elements from
- * @param size the size of the combinations to create
- * @return a sequence of all combinations
+ * @receiver The list to take elements from
+ * @param size The size of the combinations to create
+ * @return A sequence of all combinations
  */
 fun <T> List<T>.combinations(size: Int): Sequence<List<T>> =
     when (size) {
@@ -20,3 +20,24 @@ fun <T> List<T>.combinations(size: Int): Sequence<List<T>> =
             }
         }
     }
+
+/**
+ * Same functionality as eachCount, but returns a map with the count value of type Long
+ * @receiver The grouping to count
+ * @return A map with the number of each element as value
+ */
+fun <T, K> Grouping<T, K>.eachCountLong(): Map<K, Long> {
+    return this.eachCount().map { it.key to it.value.toLong() }.toMap()
+}
+
+/**
+ * Flattens a list of maps which all represent some kind of counting
+ * @receiver The list of maps, which should be combines/flatten
+ * @return A map with the combine count of each element
+ */
+fun <T> List<Map<T, Long>>.flatten() = this.fold(mutableMapOf<T, Long>()) { acc, entries ->
+    entries.forEach { entry ->
+        acc[entry.key] = acc.getOrElse(entry.key) { 0L } + entry.value
+    }
+    acc
+}.toMap()
