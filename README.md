@@ -1,9 +1,9 @@
 # Advent Of Code 2024
 
-![Days completed](https://img.shields.io/badge/Days%20Completed-11-green)
-![Stars obtained](https://img.shields.io/badge/Stars%20Obtained%20⭐-23-yellow)
-![Help Needed](https://img.shields.io/badge/Help%20Needed%20➕-0-purple)
-![Not Solved](https://img.shields.io/badge/Not%20Solved%20❌-1-red)
+![Days completed](https://img.shields.io/badge/Days%20Completed-12-green)
+![Stars obtained](https://img.shields.io/badge/Stars%20Obtained%20⭐-24-yellow)
+![Help Needed](https://img.shields.io/badge/Help%20Needed%20➕-1-purple)
+![Not Solved](https://img.shields.io/badge/Not%20Solved%20❌-0-red)
 
 These are my solution to the Advent of Code[^aoc-footnote] puzzles of 2024.
 
@@ -22,7 +22,7 @@ These are my solution to the Advent of Code[^aoc-footnote] puzzles of 2024.
 | 09  |    [Disk Fragmenter][day09]    |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day09.kt) |
 | 10  |        [Hoof It][day10]        |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day10.kt) |
 | 11  |   [Plutonian Pebbles][day11]   |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day11.kt) |
-| 12  |     [Garden Groups][day12]     |   ⭐    |   ❌    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day12.kt) |
+| 12  |     [Garden Groups][day12]     |   ⭐    |   ➕    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day12.kt) |
 
 [^aoc-footnote]:
 [Advent of Code][aoc] – An annual event of Christmas-oriented programming challenges started December 2015.
