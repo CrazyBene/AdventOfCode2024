@@ -1,11 +1,11 @@
 import Day12.Position
 
-fun main() = Day12.run(RunMode.PART2)
+fun main() = Day12.run(RunMode.BOTH)
 
 object Day12 : BasicDay() {
 
     override val expectedTestValuePart1 = 140
-//    override val expectedTestValuePart2 = 1206
+    override val expectedTestValuePart2 = 1206
 
     override val solvePart1: ((List<String>) -> Int) = { input ->
         val garden = Garden.parseInput(input)
@@ -17,23 +17,15 @@ object Day12 : BasicDay() {
         }
     }
 
-//    override val solvePart2: ((List<String>) -> Int) = { input ->
-//        val garden = Garden.parseInput(input)
-//
-//        val gardenPlots = calculatePlots(garden)
-//
-//        gardenPlots.forEach { plot ->
-//            println("...........")
-//            println(garden.getOrNull(plot.positions.first()))
-//            println(plot.outerCorners())
-//            println(plot.innerCorners())
-//        }
-//
-////        gardenPlots.sumOf { plot ->
-////            (plot.outerCorners() + plot.innerCorners()) * plot.size
-////        }
-//        0
-//    }
+    override val solvePart2: ((List<String>) -> Int) = { input ->
+        val garden = Garden.parseInput(input)
+
+        val gardenPlots = calculatePlots(garden)
+
+        gardenPlots.sumOf { plot ->
+            plot.calculateDiscountedFencePrice()
+        }
+    }
 
     // this does not look like a good algorithm, but for now its works and is fast enough
     private fun getSameNeighbors(
@@ -114,172 +106,39 @@ object Day12 : BasicDay() {
 
         fun calculateFencePrice() = this.size * this.calculatePerimeter()
 
-//        fun outerCorners(): Int {
-//            val outsideNeighbors = mutableMapOf<Position, MutableList<Position>>()
-//
-//            positions.forEach { position ->
-//                listOf(
-//                    position + Position(1, 0),
-//                    position + Position(-1, 0),
-//                    position + Position(0, 1),
-//                    position + Position(0, -1)
-//                ).filter { possibleNeighbor ->
-//                    possibleNeighbor !in positions
-//                }.forEach { outsideNeighbor ->
-//                    if (!outsideNeighbors.containsKey(outsideNeighbor))
-//                        outsideNeighbors[outsideNeighbor] = mutableListOf<Position>()
-//                    outsideNeighbors[outsideNeighbor]!!.add(position)
-//                }
-//            }
-//
-//            val realOutsideN = mutableSetOf<Position>()
-//            outsideNeighbors.forEach { outsideNeighbor ->
-//                if (listOf(
-//                        outsideNeighbor.key + Position(1, 0),
-//                        outsideNeighbor.key + Position(0, 1),
-//                    ).all { possibleNeighbor ->
-//                        possibleNeighbor in outsideNeighbor.value
-//                    }
-//                ) realOutsideN += outsideNeighbor.key
-//
-//                if (listOf(
-//                        outsideNeighbor.key + Position(0, 1),
-//                        outsideNeighbor.key + Position(-1, 0),
-//                    ).all { possibleNeighbor ->
-//                        possibleNeighbor in outsideNeighbor.value
-//                    }
-//                ) realOutsideN += outsideNeighbor.key
-//
-//                if (listOf(
-//                        outsideNeighbor.key + Position(-1, 0),
-//                        outsideNeighbor.key + Position(0, -1),
-//                    ).all { possibleNeighbor ->
-//                        possibleNeighbor in outsideNeighbor.value
-//                    }
-//                ) realOutsideN += outsideNeighbor.key
-//
-//                if (listOf(
-//                        outsideNeighbor.key + Position(0, -1),
-//                        outsideNeighbor.key + Position(1, 0),
-//                    ).all { possibleNeighbor ->
-//                        possibleNeighbor in outsideNeighbor.value
-//                    }
-//                ) realOutsideN += outsideNeighbor.key
-//            }
-//
-//            return positions.map { position ->
-//                var cornerValue = 0
-//                if (listOf(
-//                        position + Position(1, 0),
-//                        position + Position(0, 1),
-//                    ).all { possibleNeighbor ->
-//                        possibleNeighbor !in positions
-//                    } && listOf(
-//                        position + Position(1, 0),
-//                        position + Position(0, 1),
-//                    ).any { possibleNeighbor ->
-//                        possibleNeighbor !in realOutsideN
-//                    }
-//                ) cornerValue++
-//
-//                if (listOf(
-//                        position + Position(0, 1),
-//                        position + Position(-1, 0),
-//                    ).all { possibleNeighbor ->
-//                        possibleNeighbor !in positions
-//                    } && listOf(
-//                        position + Position(0, 1),
-//                        position + Position(-1, 0),
-//                    ).any { possibleNeighbor ->
-//                        possibleNeighbor !in realOutsideN
-//                    }
-//                ) cornerValue++
-//
-//                if (listOf(
-//                        position + Position(-1, 0),
-//                        position + Position(0, -1),
-//                    ).all { possibleNeighbor ->
-//                        possibleNeighbor !in positions
-//                    } && listOf(
-//                        position + Position(-1, 0),
-//                        position + Position(0, -1),
-//                    ).any { possibleNeighbor ->
-//                        possibleNeighbor !in realOutsideN
-//                    }
-//                ) cornerValue++
-//
-//                if (listOf(
-//                        position + Position(0, -1),
-//                        position + Position(1, 0),
-//                    ).all { possibleNeighbor ->
-//                        possibleNeighbor !in positions
-//                    } && listOf(
-//                        position + Position(0, -1),
-//                        position + Position(1, 0),
-//                    ).any { possibleNeighbor ->
-//                        possibleNeighbor !in realOutsideN
-//                    }
-//                ) cornerValue++
-//
-//                cornerValue
-//            }.sum()
-//        }
-//
-//        fun innerCorners(): Int {
-//            val outsideNeighbors = mutableMapOf<Position, MutableList<Position>>()
-//
-//            positions.forEach { position ->
-//                listOf(
-//                    position + Position(1, 0),
-//                    position + Position(-1, 0),
-//                    position + Position(0, 1),
-//                    position + Position(0, -1)
-//                ).filter { possibleNeighbor ->
-//                    possibleNeighbor !in positions
-//                }.forEach { outsideNeighbor ->
-//                    if (!outsideNeighbors.containsKey(outsideNeighbor))
-//                        outsideNeighbors[outsideNeighbor] = mutableListOf<Position>()
-//                    outsideNeighbors[outsideNeighbor]!!.add(position)
-//                }
-//            }
-//
-//            return outsideNeighbors.map { outsideNeighbor ->
-//                var cornerValue = 0
-//                if (listOf(
-//                        outsideNeighbor.key + Position(1, 0),
-//                        outsideNeighbor.key + Position(0, 1),
-//                    ).all { possibleNeighbor ->
-//                        possibleNeighbor in outsideNeighbor.value
-//                    }
-//                ) cornerValue++
-//
-//                if (listOf(
-//                        outsideNeighbor.key + Position(0, 1),
-//                        outsideNeighbor.key + Position(-1, 0),
-//                    ).all { possibleNeighbor ->
-//                        possibleNeighbor in outsideNeighbor.value
-//                    }
-//                ) cornerValue++
-//
-//                if (listOf(
-//                        outsideNeighbor.key + Position(-1, 0),
-//                        outsideNeighbor.key + Position(0, -1),
-//                    ).all { possibleNeighbor ->
-//                        possibleNeighbor in outsideNeighbor.value
-//                    }
-//                ) cornerValue++
-//
-//                if (listOf(
-//                        outsideNeighbor.key + Position(0, -1),
-//                        outsideNeighbor.key + Position(1, 0),
-//                    ).all { possibleNeighbor ->
-//                        possibleNeighbor in outsideNeighbor.value
-//                    }
-//                ) cornerValue++
-//
-//                cornerValue
-//            }.sum()
-//        }
+        fun calculateBorderCount(): Int {
+            var borderCount = 0
+
+
+            listOf(
+                Position(0, -1) to listOf(Position(-1, 0), Position(1, 0)),
+                Position(0, 1) to listOf(Position(-1, 0), Position(1, 0)),
+                Position(1, 0) to listOf(Position(0, -1), Position(0, 1)),
+                Position(-1, 0) to listOf(Position(0, -1), Position(0, 1)),
+            ).forEach { direction ->
+                val seen = mutableSetOf<Position>()
+                positions.filter { position ->
+                    position + direction.first !in positions
+                }.forEach { position ->
+                    if (position in seen) return@forEach
+
+                    seen += position
+                    borderCount++
+
+                    direction.second.forEach { testDirection ->
+                        var newPosition = position + testDirection
+                        while (newPosition in positions && newPosition + direction.first !in positions) {
+                            seen += newPosition
+                            newPosition += testDirection
+                        }
+                    }
+                }
+            }
+
+            return borderCount
+        }
+
+        fun calculateDiscountedFencePrice() = this.size * this.calculateBorderCount()
 
     }
 
