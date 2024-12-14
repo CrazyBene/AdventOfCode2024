@@ -7,7 +7,7 @@ object Day12 : BasicDay() {
     override val expectedTestValuePart1 = 140
     override val expectedTestValuePart2 = 1206
 
-    override val solvePart1: ((List<String>) -> Int) = { input ->
+    override val solvePart1: ((List<String>, Boolean) -> Int) = { input, _ ->
         val garden = Garden.parseInput(input)
 
         val gardenPlots = calculatePlots(garden)
@@ -17,7 +17,7 @@ object Day12 : BasicDay() {
         }
     }
 
-    override val solvePart2: ((List<String>) -> Int) = { input ->
+    override val solvePart2: ((List<String>, Boolean) -> Int) = { input, _ ->
         val garden = Garden.parseInput(input)
 
         val gardenPlots = calculatePlots(garden)

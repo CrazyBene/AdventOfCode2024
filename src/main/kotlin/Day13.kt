@@ -17,7 +17,7 @@ object Day13 : BasicDay() {
     private val buttonRegex = """Button [AB]: X\+(\d+), Y\+(\d+)""".toRegex()
     private val priceLocationRegex = """Prize: X=(\d+), Y=(\d+)""".toRegex()
 
-    override val solvePart1: ((List<String>) -> Long) = { input ->
+    override val solvePart1: ((List<String>, Boolean) -> Long) = { input, _ ->
         val clawMachines = parseInput(input)
 
         clawMachines.sumOf { clawMachine ->
@@ -29,7 +29,7 @@ object Day13 : BasicDay() {
         }
     }
 
-    override val solvePart2: ((List<String>) -> Long) = { input ->
+    override val solvePart2: ((List<String>, Boolean) -> Long) = { input, _ ->
         val clawMachines = parseInput(input, 10000000000000)
 
         clawMachines.sumOf { clawMachine ->

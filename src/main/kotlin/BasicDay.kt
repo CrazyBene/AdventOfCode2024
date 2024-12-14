@@ -21,8 +21,8 @@ abstract class BasicDay(separateTestFiles: Boolean = false) {
     protected open val expectedTestValuePart1: Any? = null
     protected open val expectedTestValuePart2: Any? = null
 
-    protected open val solvePart1: ((input: List<String>) -> Any)? = null
-    protected open val solvePart2: ((input: List<String>) -> Any)? = null
+    protected open val solvePart1: ((input: List<String>, isTest: Boolean) -> Any)? = null
+    protected open val solvePart2: ((input: List<String>, isTest: Boolean) -> Any)? = null
 
     fun run(runMode: RunMode = RunMode.BOTH) {
         println("Advent of Code 2024 - Day $day")
@@ -51,7 +51,7 @@ abstract class BasicDay(separateTestFiles: Boolean = false) {
         }
     }
 
-    private fun checkFunctionImplementation(partNumber: Int, solveFunction: ((List<String>) -> Any)?): Boolean {
+    private fun checkFunctionImplementation(partNumber: Int, solveFunction: ((List<String>, Boolean) -> Any)?): Boolean {
         if (solveFunction != null) {
             return true
         } else {
@@ -62,7 +62,7 @@ abstract class BasicDay(separateTestFiles: Boolean = false) {
     }
 
     private fun checkTestInput(
-        partNumber: Int, solveFunction: ((List<String>) -> Any), testInput: List<String>?, expectedValueTestPart: Any?
+        partNumber: Int, solveFunction: (List<String>, Boolean) -> Any, testInput: List<String>?, expectedValueTestPart: Any?
     ): Boolean {
         println()
         if (testInput == null) {
@@ -76,7 +76,7 @@ abstract class BasicDay(separateTestFiles: Boolean = false) {
         }
 
         println("Running part $partNumber on test data ...")
-        val (testSolution, testDuration) = measureTimedValue { solveFunction(testInput) }
+        val (testSolution, testDuration) = measureTimedValue { solveFunction(testInput, true) }
         if (testSolution == expectedValueTestPart) {
             println("✔ Passed part $partNumber test - took $testDuration", ConsoleColor.GREEN)
             return true
@@ -89,7 +89,7 @@ abstract class BasicDay(separateTestFiles: Boolean = false) {
         return false
     }
 
-    private fun runOnRealData(partNumber: Int, solveFunction: ((List<String>) -> Any), realInput: List<String>?) {
+    private fun runOnRealData(partNumber: Int, solveFunction: (List<String>, Boolean) -> Any, realInput: List<String>?) {
         println()
         if (realInput == null) {
             println("» Missing real input file, skipping run.", ConsoleColor.CYAN)
@@ -97,7 +97,7 @@ abstract class BasicDay(separateTestFiles: Boolean = false) {
         }
 
         println("Running part $partNumber on real data ...")
-        val (solution, duration) = measureTimedValue { solveFunction(realInput) }
+        val (solution, duration) = measureTimedValue { solveFunction(realInput, false) }
         println("> Solution for part $partNumber: $solution - took $duration", ConsoleColor.PURPLE)
     }
 

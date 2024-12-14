@@ -10,7 +10,7 @@ object Day03 : BasicDay(separateTestFiles = true) {
     override val expectedTestValuePart1: Int = 161
     override val expectedTestValuePart2: Int = 48
 
-    override val solvePart1: ((List<String>) -> Int) = { input ->
+    override val solvePart1: ((List<String>, Boolean) -> Int) = { input, _ ->
         input.sumOf { line ->
             val matches = mulRegex.findAll(line)
 
@@ -23,7 +23,7 @@ object Day03 : BasicDay(separateTestFiles = true) {
         }
     }
 
-    override val solvePart2: ((List<String>) -> Int) = { input ->
+    override val solvePart2: ((List<String>, Boolean) -> Int) = { input, _ ->
         var mulActivated = true
 
         input.sumOf { line ->

@@ -8,7 +8,7 @@ object Day09 : BasicDay() {
     override val expectedTestValuePart1 = 1928L
     override val expectedTestValuePart2 = 2858L
 
-    override val solvePart1: ((List<String>) -> Long) = { input ->
+    override val solvePart1: ((List<String>, Boolean) -> Long) = { input, _ ->
         var fullInput = input.first().flatMapIndexed { index, char ->
             if (index % 2 == 0)
                 List(char.digitToInt()) { index / 2 }
@@ -40,7 +40,7 @@ object Day09 : BasicDay() {
         output.calculateChecksum()
     }
 
-    override val solvePart2: ((List<String>) -> Long) = { input ->
+    override val solvePart2: ((List<String>, Boolean) -> Long) = { input, _ ->
         var blocks = input.first().mapIndexed { index, char ->
             if (index % 2 == 0) Block(char.digitToInt(), index / 2)
             else Block(char.digitToInt(), null)

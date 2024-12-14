@@ -7,7 +7,7 @@ object Day01 : BasicDay() {
     override val expectedTestValuePart1 = 11
     override val expectedTestValuePart2 = 31
 
-    override val solvePart1: ((List<String>) -> Int)? = { input ->
+    override val solvePart1: ((List<String>, Boolean) -> Int)? = { input, _ ->
         val (leftList, rightList) = splitIntoLists(input)
 
         val (leftListSorted, rightListSorted) = leftList.sorted() to rightList.sorted()
@@ -17,7 +17,7 @@ object Day01 : BasicDay() {
         }.sum()
     }
 
-    override val solvePart2: ((List<String>) -> Int)? = { input ->
+    override val solvePart2: ((List<String>, Boolean) -> Int)? = { input, _ ->
         val (leftList, rightList) = splitIntoLists(input)
 
         leftList.sumOf { number ->

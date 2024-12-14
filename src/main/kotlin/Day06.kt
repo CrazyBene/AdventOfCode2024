@@ -7,7 +7,7 @@ object Day06 : BasicDay() {
     override val expectedTestValuePart1 = 41
     override val expectedTestValuePart2 = 6
 
-    override val solvePart1: ((List<String>) -> Int) = { input ->
+    override val solvePart1: ((List<String>, Boolean) -> Int) = { input, _ ->
         val width = input.first().length
         val height = input.size
 
@@ -17,7 +17,7 @@ object Day06 : BasicDay() {
         placesVisited.count()
     }
 
-    override val solvePart2: ((List<String>) -> Int) = { input ->
+    override val solvePart2: ((List<String>, Boolean) -> Int) = { input, _ ->
         val width = input.first().length
         val height = input.size
 

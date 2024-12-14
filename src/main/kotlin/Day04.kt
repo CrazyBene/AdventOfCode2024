@@ -5,7 +5,7 @@ object Day04 : BasicDay() {
     override val expectedTestValuePart1: Int = 18
     override val expectedTestValuePart2: Int = 9
 
-    override val solvePart1: ((List<String>) -> Int) = { input ->
+    override val solvePart1: ((List<String>, Boolean) -> Int) = { input, _ ->
         val inputTransposed = input.transpose()
         val inputRotated45 = input.rotate45Degrees()
         val inputRotated315 = input.map { it.reversed() }.rotate45Degrees()
@@ -15,7 +15,7 @@ object Day04 : BasicDay() {
         }
     }
 
-    override val solvePart2: ((List<String>) -> Int) = { input ->
+    override val solvePart2: ((List<String>, Boolean) -> Int) = { input, _ ->
         input.withIndex().sumOf { (y, row) ->
             if (y == 0 || y == input.size - 1) return@sumOf 0
 

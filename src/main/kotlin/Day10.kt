@@ -5,7 +5,7 @@ object Day10 : BasicDay() {
     override val expectedTestValuePart1 = 36
     override val expectedTestValuePart2 = 81
 
-    override val solvePart1: ((List<String>) -> Int) = { input ->
+    override val solvePart1: ((List<String>, Boolean) -> Int) = { input, _ ->
         val (topographicMap, trailheads) = parseInput(input)
 
         trailheads.sumOf {
@@ -13,7 +13,7 @@ object Day10 : BasicDay() {
         }
     }
 
-    override val solvePart2: ((List<String>) -> Int) = { input ->
+    override val solvePart2: ((List<String>, Boolean) -> Int) = { input, _ ->
         val (topographicMap, trailheads) = parseInput(input)
 
         trailheads.sumOf {

@@ -8,7 +8,7 @@ object Day07 : BasicDay() {
     override val expectedTestValuePart1 = 3749L
     override val expectedTestValuePart2 = 11387L
 
-    override val solvePart1: ((List<String>) -> Long) = { input ->
+    override val solvePart1: ((List<String>, Boolean) -> Long) = { input, _ ->
         val equations = parseInput(input)
 
         getSolvableEquations(
@@ -20,7 +20,7 @@ object Day07 : BasicDay() {
         ).sumOf { it.wantedResult }
     }
 
-    override val solvePart2: ((List<String>) -> Long) = { input ->
+    override val solvePart2: ((List<String>, Boolean) -> Long) = { input, _ ->
         val equations = parseInput(input)
 
         getSolvableEquations(

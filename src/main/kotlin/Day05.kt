@@ -5,7 +5,7 @@ object Day05 : BasicDay() {
     override val expectedTestValuePart1 = 143
     override val expectedTestValuePart2 = 123
 
-    override val solvePart1: ((List<String>) -> Int) = { input ->
+    override val solvePart1: ((List<String>, Boolean) -> Int) = { input, _ ->
         val (pageOrderingRules, updates) = parseInput(input)
 
         updates.filter { update ->
@@ -13,7 +13,7 @@ object Day05 : BasicDay() {
         }.sumOf { it.getMiddlePageNumber() }
     }
 
-    override val solvePart2: ((List<String>) -> Int) = { input ->
+    override val solvePart2: ((List<String>, Boolean) -> Int) = { input, _ ->
         val (pageOrderingRules, updates) = parseInput(input)
 
         updates.filterNot { update ->

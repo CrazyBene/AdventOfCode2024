@@ -6,7 +6,7 @@ object Day11 : BasicDay() {
 
     override val expectedTestValuePart1 = 55312
 
-    override val solvePart1: ((List<String>) -> Int) = { input ->
+    override val solvePart1: ((List<String>, Boolean) -> Int) = { input, _ ->
         var stones = input.first().split(' ').map { it.toLong() }
 
         repeat(25) { stones = blinkList(stones) }
@@ -14,7 +14,7 @@ object Day11 : BasicDay() {
         stones.count()
     }
 
-    override val solvePart2: ((List<String>) -> Long) = { input ->
+    override val solvePart2: ((List<String>, Boolean) -> Long) = { input, _ ->
         var stoneGroups = parseToGroups(input)
 
         repeat(75) { stoneGroups = blinkGroups(stoneGroups) }

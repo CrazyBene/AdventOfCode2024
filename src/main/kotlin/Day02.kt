@@ -5,7 +5,7 @@ object Day02 : BasicDay() {
     override val expectedTestValuePart1: Int = 2
     override val expectedTestValuePart2: Int = 4
 
-    override val solvePart1: ((List<String>) -> Int)? = { input ->
+    override val solvePart1: ((List<String>, Boolean) -> Int)? = { input, _ ->
         input.filter { report ->
             val levels = report.split(' ').map { it.toInt() }
 
@@ -13,7 +13,7 @@ object Day02 : BasicDay() {
         }.count()
     }
 
-    override val solvePart2: ((List<String>) -> Int)? = { input ->
+    override val solvePart2: ((List<String>, Boolean) -> Int)? = { input, _ ->
         input.filter { report ->
             val levels = report.split(' ').map { it.toInt() }
 
