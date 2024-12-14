@@ -1,7 +1,7 @@
 # Advent Of Code 2024
 
-![Days completed](https://img.shields.io/badge/Days%20Completed-13-green)
-![Stars obtained](https://img.shields.io/badge/Stars%20Obtained%20⭐-26-yellow)
+![Days completed](https://img.shields.io/badge/Days%20Completed-14-green)
+![Stars obtained](https://img.shields.io/badge/Stars%20Obtained%20⭐-28-yellow)
 ![Help Needed](https://img.shields.io/badge/Help%20Needed%20➕-1-purple)
 ![Not Solved](https://img.shields.io/badge/Not%20Solved%20❌-0-red)
 
@@ -24,6 +24,7 @@ These are my solution to the Advent of Code[^aoc-footnote] puzzles of 2024.
 | 11  |   [Plutonian Pebbles][day11]   |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day11.kt) |
 | 12  |     [Garden Groups][day12]     |   ⭐    |   ➕    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day12.kt) |
 | 13  |   [Claw Contraption][day13]    |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day13.kt) |
+| 14  |   [Restroom Redoubt][day14]    |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day14.kt) |
 
 [^aoc-footnote]:
 [Advent of Code][aoc] – An annual event of Christmas-oriented programming challenges started December 2015.
@@ -58,3 +59,5 @@ You can solve the puzzle and provide an answer using the language of your choice
 [day12]: https://adventofcode.com/2024/day/12
 
 [day13]: https://adventofcode.com/2024/day/13
+
+[day14]: https://adventofcode.com/2024/day/14
