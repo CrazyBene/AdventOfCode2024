@@ -1,7 +1,7 @@
 # Advent Of Code 2024
 
-![Days completed](https://img.shields.io/badge/Days%20Completed-19-green)
-![Stars obtained](https://img.shields.io/badge/Stars%20Obtained%20⭐-38-yellow)
+![Days completed](https://img.shields.io/badge/Days%20Completed-20-green)
+![Stars obtained](https://img.shields.io/badge/Stars%20Obtained%20⭐-40-yellow)
 ![Help Needed](https://img.shields.io/badge/Help%20Needed%20➕-2-purple)
 ![Not Solved](https://img.shields.io/badge/Not%20Solved%20❌-0-red)
 
@@ -30,6 +30,7 @@ These are my solution to the Advent of Code[^aoc-footnote] puzzles of 2024.
 | 17  | [Chronospatial Computer][day17] |   ⭐    |   ➕    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day17.kt) |
 | 18  |        [RAM Run][day18]         |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day18.kt) |
 | 19  |      [Linen Layout][day19]      |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day19.kt) |
+| 20  |     [Race Condition][day20]     |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day20.kt) |
 
 [^aoc-footnote]:
 [Advent of Code][aoc] – An annual event of Christmas-oriented programming challenges started December 2015.
@@ -76,3 +77,5 @@ You can solve the puzzle and provide an answer using the language of your choice
 [day18]: https://adventofcode.com/2024/day/18
 
 [day19]: https://adventofcode.com/2024/day/19
+
+[day20]: https://adventofcode.com/2024/day/20
