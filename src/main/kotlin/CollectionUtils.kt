@@ -21,6 +21,8 @@ fun <T> List<T>.combinations(size: Int): Sequence<List<T>> =
         }
     }
 
+fun <T> Set<T>.combinations(size: Int): Sequence<List<T>> = this.toList().combinations(size)
+
 /**
  * Same functionality as eachCount, but returns a map with the count value of type Long
  * @receiver The grouping to count

@@ -1,8 +1,8 @@
 # Advent Of Code 2024
 
-![Days completed](https://img.shields.io/badge/Days%20Completed-21-green)
-![Stars obtained](https://img.shields.io/badge/Stars%20Obtained%20⭐-42-yellow)
-![Help Needed](https://img.shields.io/badge/Help%20Needed%20➕-2-purple)
+![Days completed](https://img.shields.io/badge/Days%20Completed-22-green)
+![Stars obtained](https://img.shields.io/badge/Stars%20Obtained%20⭐-44-yellow)
+![Help Needed](https://img.shields.io/badge/Help%20Needed%20➕-3-purple)
 ![Not Solved](https://img.shields.io/badge/Not%20Solved%20❌-2-red)
 
 These are my solution to the Advent of Code[^aoc-footnote] puzzles of 2024.
@@ -33,6 +33,7 @@ These are my solution to the Advent of Code[^aoc-footnote] puzzles of 2024.
 | 20  |     [Race Condition][day20]     |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day20.kt) |
 | 21  |    [Keypad Conundrum][day21]    |   ❌    |   ❌    |                                                                                                             |
 | 22  |     [Monkey Market][day22]      |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day22.kt) |
+| 23  |       [LAN Party][day22]        |   ⭐    |   ➕    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day23.kt) |
 
 [^aoc-footnote]:
 [Advent of Code][aoc] – An annual event of Christmas-oriented programming challenges started December 2015.
@@ -85,3 +86,5 @@ You can solve the puzzle and provide an answer using the language of your choice
 [day21]: https://adventofcode.com/2024/day/21
 
 [day22]: https://adventofcode.com/2024/day/22
+
+[day23]: https://adventofcode.com/2024/day/23
