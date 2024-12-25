@@ -43,3 +43,12 @@ fun <T> List<Map<T, Long>>.flatten() = this.fold(mutableMapOf<T, Long>()) { acc,
     }
     acc
 }.toMap()
+
+fun <T> cartesianProduct(vararg sets: List<T>): List<List<T>> {
+    if(sets.size < 2) error("could not build cartesian product")
+
+    return (listOf(sets[0], sets[1]).plus(sets.asList().subList(2, sets.size)))
+        .fold(listOf(listOf<T>())) { acc, set ->
+            acc.flatMap { list -> set.map { element -> list + element } }
+        }
+}

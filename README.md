@@ -1,8 +1,8 @@
 # Advent Of Code 2024
 
-![Days completed](https://img.shields.io/badge/Days%20Completed-22-green)
-![Stars obtained](https://img.shields.io/badge/Stars%20Obtained%20⭐-44-yellow)
-![Help Needed](https://img.shields.io/badge/Help%20Needed%20➕-3-purple)
+![Days completed](https://img.shields.io/badge/Days%20Completed-23-green)
+![Stars obtained](https://img.shields.io/badge/Stars%20Obtained%20⭐-46-yellow)
+![Help Needed](https://img.shields.io/badge/Help%20Needed%20➕-5-purple)
 ![Not Solved](https://img.shields.io/badge/Not%20Solved%20❌-2-red)
 
 These are my solution to the Advent of Code[^aoc-footnote] puzzles of 2024.
@@ -31,7 +31,7 @@ These are my solution to the Advent of Code[^aoc-footnote] puzzles of 2024.
 | 18  |        [RAM Run][day18]         |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day18.kt) |
 | 19  |      [Linen Layout][day19]      |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day19.kt) |
 | 20  |     [Race Condition][day20]     |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day20.kt) |
-| 21  |    [Keypad Conundrum][day21]    |   ❌    |   ❌    |                                                                                                             |
+| 21  |    [Keypad Conundrum][day21]    |   ➕    |   ➕    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day21.kt) |
 | 22  |     [Monkey Market][day22]      |   ⭐    |   ⭐    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day22.kt) |
 | 23  |       [LAN Party][day22]        |   ⭐    |   ➕    | [![Code](https://img.shields.io/badge/Code-grey?style=for-the-badge&logo=Kotlin)](src/main/kotlin/Day23.kt) |
 
